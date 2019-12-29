@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace RegexFX.String
 {
-    public static class StringExtensions
+    public static partial class StringExtensions
     {
         public static string Substring(this string s, int startIndex, int length = 1)
         {
