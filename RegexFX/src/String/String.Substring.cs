@@ -6,7 +6,7 @@ namespace RegexFX.String
 {
     public static partial class StringExtensions
     {
-        public static string Substring(this string s, int startIndex, int length = 1)
+        public static string SubstringRegex(this string s, int startIndex, int length = 1)
         {
             if (startIndex < 0)
                 throw new ArgumentOutOfRangeException(nameof(startIndex), "StartIndex cannot be less than zero.");
@@ -28,8 +28,7 @@ namespace RegexFX.String
             if (startIndex == 0 && length == s.Length)
                 return s;
 
-            var skip = new string('.', startIndex);
-            var regex = new Regex($@"(?<={skip}).{{1, {length}}}");
+            var regex = new Regex($@"(?<=.{{{startIndex}}}).{{{length}}}");
             return regex.Match(s).Value;
         }
     }
