@@ -2,7 +2,6 @@
 using RegexFX.String;
 using Shouldly;
 using Xunit;
-using Xunit.Sdk;
 
 namespace RegexFX.Tests
 {
@@ -29,5 +28,35 @@ namespace RegexFX.Tests
         {
             input.SubstringRegex(start, length).ShouldBe(input.Substring(start, length));
         }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("         ")]
+        [InlineData("abcdefghijkl")]
+        [InlineData("abcdefghijkl    ")]
+        [InlineData("      0123456789")]
+        [InlineData("    012345   6789   ")]
+        [InlineData("      0123456789  ")]
+        public void Trim_ShouldBe(string input) { input.TrimRegex().ShouldBe(input.Trim()); }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("         ")]
+        [InlineData("abcdefghijkl")]
+        [InlineData("abcdefghijkl    ")]
+        [InlineData("      0123456789")]
+        [InlineData("    012345   6789   ")]
+        [InlineData("      0123456789  ")]
+        public void TrimStart_ShouldBe(string input) { input.TrimStartRegex().ShouldBe(input.TrimStart()); }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("         ")]
+        [InlineData("abcdefghijkl")]
+        [InlineData("abcdefghijkl    ")]
+        [InlineData("      0123456789")]
+        [InlineData("    012345   6789   ")]
+        [InlineData("      0123456789  ")]
+        public void TrimEnd_ShouldBe(string input) { input.TrimEndRegex().ShouldBe(input.TrimEnd()); }
     }
 }
