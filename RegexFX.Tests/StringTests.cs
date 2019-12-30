@@ -58,5 +58,53 @@ namespace RegexFX.Tests
         [InlineData("    012345   6789   ")]
         [InlineData("      0123456789  ")]
         public void TrimEnd_ShouldBe(string input) { input.TrimEndRegex().ShouldBe(input.TrimEnd()); }
+
+        [Theory]
+        [InlineData("", "")]
+        [InlineData("", "      ")]
+        [InlineData("         ", "")]
+        [InlineData("abcdefghijkl", "abcd")]
+        [InlineData("       abcdefghijkl", "ijkl")]
+        [InlineData("abcdefghijkl    ", "bcd")]
+        [InlineData("      0123456789", "0123")]
+        [InlineData("    012345   6789   ", "    ")]
+        [InlineData("      0123456789  ", "9 ")]
+        [InlineData("  012 34 56  789  ", " 9 d ")]
+        public void StartsWith_ShouldBe(string input, string search)
+        {
+            input.StartsWithRegex(search).ShouldBe(input.StartsWith(search));
+        }
+
+        [Theory]
+        [InlineData("", "")]
+        [InlineData("", "      ")]
+        [InlineData("         ", "")]
+        [InlineData("abcdefghijkl", "abcd")]
+        [InlineData("       abcdefghijkl", "ijkl")]
+        [InlineData("abcdefghijkl    ", "bcd")]
+        [InlineData("      0123456789", "0123")]
+        [InlineData("    012345   6789   ", "    ")]
+        [InlineData("      0123456789  ", "9 ")]
+        [InlineData("  012 34 56  789  ", " 9 d ")]
+        public void EndsWith_ShouldBe(string input, string search)
+        {
+            input.EndsWithRegex(search).ShouldBe(input.EndsWith(search));
+        }
+
+        [Theory]
+        [InlineData("", "")]
+        [InlineData("", "      ")]
+        [InlineData("         ", "")]
+        [InlineData("abcdefghijkl", "abcd")]
+        [InlineData("       abcdefghijkl", "ijkl")]
+        [InlineData("abcdefghijkl    ", "bcd")]
+        [InlineData("      0123456789", "0123")]
+        [InlineData("    012345   6789   ", "    ")]
+        [InlineData("      0123456789  ", "9 ")]
+        [InlineData("  012 34 56  789  ", " 9 d ")]
+        public void Contains_ShouldBe(string input, string search)
+        {
+            input.ContainsRegex(search).ShouldBe(input.Contains(search));
+        }
     }
 }
