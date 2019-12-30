@@ -21,7 +21,7 @@ namespace RegexFX.String
             return regex.Success ? regex.Groups["offset"].Value.Length + (startIndex ?? 0) : -1;
         }
 
-        public static int IndexOf(this string s, char search, int? startIndex = null, int? count = null,
+        public static int IndexOfRegex(this string s, char search, int? startIndex = null, int? count = null,
             StringComparison comparison = StringComparison.None) =>
             IndexOfRegex(s, search.ToString(), startIndex ?? 0, count ?? s.Length, comparison);
 
@@ -37,7 +37,7 @@ namespace RegexFX.String
             StringComparison comparison = StringComparison.None) =>
             LastIndexOfRegex(s, search.ToString(), startIndex ?? 0, count ?? s.Length, comparison);
 
-        public static int IndexOfAny(this string s, char[] search, int? startIndex = null, int? count = null,
+        public static int IndexOfAnyRegex(this string s, char[] search, int? startIndex = null, int? count = null,
             StringComparison comparison = StringComparison.None)
         {
             string value = s.SubstringRegex(startIndex ?? 0, count ?? s.Length);
@@ -45,7 +45,7 @@ namespace RegexFX.String
             return regex.Success ? regex.Groups["offset"].Value.Length + (startIndex ?? 0) : -1;
         }
 
-        public static int LastIndexOfAny(this string s, char[] search, int? startIndex = null, int? count = null,
+        public static int LastIndexOfAnyRegex(this string s, char[] search, int? startIndex = null, int? count = null,
             StringComparison comparison = StringComparison.None)
         {
             string value = s.SubstringRegex(startIndex ?? 0, count ?? s.Length);

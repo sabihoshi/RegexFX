@@ -19,6 +19,39 @@ namespace RegexFX.Tests
         }
 
         [Theory]
+        [InlineData("abcdefghijkl", "e")]
+        [InlineData("abcdefghijkl", "ijl")]
+        [InlineData("0123456789", "89")]
+        [InlineData("0123456789", "11")]
+        [InlineData("0123456789", "12")]
+        public void LastIndexOf_ShouldBe(string input, string search)
+        {
+            input.LastIndexOfRegex(search).ShouldBe(input.LastIndexOf(search, StringComparison.InvariantCulture));
+        }
+
+        [Theory]
+        [InlineData("abc defghijk   l", new [] { 'a', 'g', 'h' })]
+        [InlineData("a   bcdefg  hijkl", new [] { 'a', 'b', 's' })]
+        [InlineData("  012345678       9", new [] { '1', 'g', 'h' })]
+        [InlineData("01   23456789", new [] { 'a', 'f', 'd', 'a', 'b', 'd', ' ' })]
+        [InlineData("0123  456789  ", new [] { ' ' })]
+        public void IndexOfAny_ShouldBe(string input, char[] search)
+        {
+            input.IndexOfAnyRegex(search).ShouldBe(input.IndexOfAny(search));
+        }
+
+        [Theory]
+        [InlineData("abc defghijk   l", new [] { 'a', 'g', 'h' })]
+        [InlineData("a   bcdefg  hijkl", new [] { 'a', 'b', 's' })]
+        [InlineData("  012345678       9", new [] { '1', 'g', 'h' })]
+        [InlineData("01   23456789", new [] { 'a', 'f', 'd', 'a', 'b', 'd', ' ' })]
+        [InlineData("0123  456789  ", new [] { ' ' })]
+        public void LastIndexOfAny_ShouldBe(string input, char[] search)
+        {
+            input.LastIndexOfAnyRegex(search).ShouldBe(input.LastIndexOfAny(search));
+        }
+
+        [Theory]
         [InlineData("abcdefghijkl", 0, 5)]
         [InlineData("abcdefghijkl", 0, 3)]
         [InlineData("0123456789", 2, 3)]
