@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 
 namespace RegexFX.String
@@ -30,6 +31,21 @@ namespace RegexFX.String
 
             var regex = new Regex($@"(?<=.{{{startIndex}}}).{{{length}}}");
             return regex.Match(s).Value;
+        }
+
+        public static string TrimRegex(this string s)
+        {
+            return s.TrimStartRegex().TrimEndRegex();
+        }
+
+        public static string TrimStartRegex(this string s)
+        {
+            return Regex.Replace(s, @"^\s*", string.Empty, RegexOptions.Compiled);
+        }
+
+        public static string TrimEndRegex(this string s)
+        {
+            return Regex.Replace(s, @"\s*$", string.Empty, RegexOptions.Compiled);
         }
     }
 }

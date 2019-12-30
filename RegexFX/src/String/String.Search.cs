@@ -52,5 +52,20 @@ namespace RegexFX.String
             var regex = new Regex($@"(?<offset>.*)({string.Join("|", search)})", (RegexOptions)comparison).Match(value);
             return regex.Success ? regex.Groups["offset"].Value.Length + (startIndex ?? 0) : -1;
         }
+
+        public static bool StartsWithRegex(this string s, string search, bool ignoreCase = false)
+        {
+            return Regex.IsMatch(s, $@"^{search}", ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+        }
+
+        public static bool EndsWithRegex(this string s, string search, bool ignoreCase = false)
+        {
+            return Regex.IsMatch(s, $@"{search}$", ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+        }
+
+        public static bool ContainsRegex(this string s, string search, bool ignoreCase = false)
+        {
+            return Regex.IsMatch(s, search, ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+        }
     }
 }

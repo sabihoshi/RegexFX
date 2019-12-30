@@ -15,6 +15,11 @@ You might have seen [RegexMath](https://github.com/hizamakura/RegexMath), a math
 // oo B
 ```
 
+```cs
+"   Foo Bar    ".Trim()
+// Foo Bar
+```
+
 ## Reliability
 It tries to copy some of the exceptions and behavior present in the native implementation. I try to, but it will take awhile to make it quite exact. After all, I don't understand code so optimized (after all, I am using Regex for a library, how optimized do I need to be?)
 
@@ -22,18 +27,18 @@ It tries to copy some of the exceptions and behavior present in the native imple
 
 ### String manipulation:
 - Substring
+- Trim
+- TrimStart/TrimEnd
 
 ### Search:
 - IndexOf
 - LastIndexOf
 - IndexOfAny
 - LastIndexOfAny
+- StartsWith/EndsWith
+- Contains
 
 ## TODO:
 - Split
 - Numerics
-- StartsWith
-- EndsWith
-- Contains
 - Padding
-- Trimming
