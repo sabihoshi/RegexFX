@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # RegexFX [![CodeFactor](https://www.codefactor.io/repository/github/hizamakura/regexfx/badge)](https://www.codefactor.io/repository/github/hizamakura/regexfx)
 
 # RegexMath [![Build Status](https://dev.azure.com/kaworinakano/RegexMath/_apis/build/status/hizamakura.RegexMath?branchName=master)](https://dev.azure.com/kaworinakano/RegexMath/_build/latest?definitionId=1&branchName=master) [![CodeFactor](https://www.codefactor.io/repository/github/hizamakura/regexmath/badge/master)](https://www.codefactor.io/repository/github/hizamakura/regexmath/overview/master)
@@ -47,69 +45,68 @@ It tries to copy some of the exceptions and behavior present in the native imple
 ## Features
 
 ### String manipulation:
-
-    - Substring
-    - Trim
-    - TrimStart/TrimEnd
+- Substring
+- Trim
+- TrimStart/TrimEnd
 
 ### Search:
 
-    - IndexOf
-    - LastIndexOf
-    - IndexOfAny
-    - LastIndexOfAny
-    - StartsWith/EndsWith
-    - Contains
+- IndexOf
+- LastIndexOf
+- IndexOfAny
+- LastIndexOfAny
+- StartsWith/EndsWith
+- Contains
 
 ### Standard Arithmetic:
 
-    `^`, `**`, `*`, `/`, `%`, `+`, and `-`
+`^`, `**`, `*`, `/`, `%`, `+`, and `-`
 
 ### Constants:
 
-    `PI` and `E`
+`PI` and `E`
 
 ### Standard Math functions:
 
-    - `sqrt(x)`
-    - `cbrt(x)`
-    - `root(x, y)`
-    - `log_x(y)` or `log(x, y)`
-    - `min(x, y)` or `max(x, y)`
+- `sqrt(x)`
+- `cbrt(x)`
+- `root(x, y)`
+- `log_x(y)` or `log(x, y)`
+- `min(x, y)` or `max(x, y)`
 
-    and a lot more...
+and a lot more...
 
 ### Programming constructs:
 
-    - Modulo
-    - Remainder
-    - Bitshift
+- Modulo
+- Remainder
+- Bitshift
 
 ### Complex calcuations:
 
-    - Factorial on non-natural numbers
-    - Euler Beta functions
-    - Error functions
-    - Sigmoid: Logistic functions
-    - Gamma functions
-    - Harmonic numbers
-    - Trigonometry
+- Factorial on non-natural numbers
+- Euler Beta functions
+- Error functions
+- Sigmoid: Logistic functions
+- Gamma functions
+- Harmonic numbers
+- Trigonometry
 
 ## TODO:
 
 ### String Manipulations
 
-    - Split
-    - Numerics
-    - Padding
+- Split
+- Numerics
+- Padding
 
 ### Math
 
-    - Summation in the form of `Σ/sum/sigma[i=1, 6][3i + 4]`
-    - Product in the form of `Π/prod/product[i=1, 3][3i + 4]`
-    - Variable substitution
-    - Differential equations
-    - Numerical stability
-    - Conversion between radian, degree, and grad
+- Summation in the form of `Σ/sum/sigma[i=1, 6][3i + 4]`
+- Product in the form of `Π/prod/product[i=1, 3][3i + 4]`
+- Variable substitution
+- Differential equations
+- Numerical stability
+- Conversion between radian, degree, and grad
 
 Some of the functions can be found in [Math.Net](https://numerics.mathdotnet.com/Functions.html) or [Typing Math as text](https://www.purplemath.com/modules/mathtext3.htm)
